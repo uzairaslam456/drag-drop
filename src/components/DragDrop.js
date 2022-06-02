@@ -37,10 +37,12 @@ const DragDropComponent = () => {
     shapeMovementDetails.current.initialY =  shapeMovementDetails.current.currentY
     shapeMovementDetails.current.active = false
     }
+    //moved it here to stop recalculation at every mousemove event trigerred
+    let colorChoice = selectedColors.map(colorObj => colorObj.value)
 
   let generateRandomColorAtAveryMove = () => {
 
-      let colorChoice = selectedColors.map(colorObj => colorObj.value)
+      // let colorChoice = selectedColors.map(colorObj => colorObj.value)
 
       return colorChoice[Math.floor(Math.random()*colorChoice.length)]
       
